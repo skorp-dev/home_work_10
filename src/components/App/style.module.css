@@ -1,0 +1,10 @@
+.cards_container {
+  margin-top: 20px;
+  height: 100vh;
+  display: grid;
+  gap: 20px;
+  grid-template: repeat(auto-fit, 150px) / repeat(auto-fit, 250px);
+}
+.container {
+  margin: 10px;
+}

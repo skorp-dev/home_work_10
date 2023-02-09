@@ -1,6 +1,5 @@
 .form {
   padding: 20px;
-  margin: 10px;
   border: 2px solid black;
   display: flex;
   flex-wrap: wrap;
@@ -9,22 +8,24 @@
 }
 
 .form input {
+  width: 20vh;
   padding: 10px;
   border-radius: 30px;
   background-color: #d9d9d9;
   border: none;
 }
 
-.form button{
-  width: 20%;
+.form button {
+  width: 20vh;
+  padding: 10px;
   background-color: #f5982a;
   color: white;
   border: none;
   border-radius: 30px;
   cursor: pointer;
-  transition: background-color .3s;
+  transition: background-color 0.3s;
 }
 
-.form button:hover{
+.form button:hover {
   background-color: #c9740c;
 }
