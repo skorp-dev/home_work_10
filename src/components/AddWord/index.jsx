@@ -16,8 +16,8 @@ export default function AddWord({addNewWord}) {
   return (
     <div>
       <form className={s.form} onSubmit={onSubmit}>
-        <input type="text" name='word' placeholder='word'/>
-        <input type="text" name='translate' placeholder='translate'/>
+        <input type="text" name='word' placeholder='word' required/>
+        <input type="text" name='translate' placeholder='translate' required/>
         <button>Add word</button>
       </form>
     </div>
