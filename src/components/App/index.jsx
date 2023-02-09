@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import AddWord from "../AddWord";
 import Word from "../Word";
+import Search from "../Search";
 import s from "./style.module.css";
 
 export default function App() {
@@ -22,7 +23,9 @@ export default function App() {
       translate,
       show: true,
       state_word: true,
-      color: "#" + (Math.random().toString(16) + "000000").substring(2, 8).toUpperCase()
+      color:
+        "#" +
+        (Math.random().toString(16) + "000000").substring(2, 8).toUpperCase(),
     };
     setWords([...words, newWord]);
   };
@@ -35,6 +38,17 @@ export default function App() {
     const target = words.find(({ id }) => id === _id);
     target.state_word = !target.state_word;
     setWords([...words]);
+  };
+
+  const search_handler = (string) => {
+    string = string.toLowerCase();
+    const new_words = words.map((word) => {
+      word.show =
+        word.word.toLowerCase().startsWith(string) ||
+        word.translate.toLowerCase().startsWith(string);
+      return word;
+    });
+    setWords(new_words);
   };
 
   function render() {
@@ -60,8 +74,9 @@ export default function App() {
 
   return (
     <div className={s.container}>
-      <div>
+      <div className={s.header}>
         <AddWord addNewWord={addNewWord} />
+        <Search search_handler={search_handler} />
       </div>
       <div className={s.cards_container}>{render()}</div>
     </div>
